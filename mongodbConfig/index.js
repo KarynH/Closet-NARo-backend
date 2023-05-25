@@ -12,4 +12,5 @@ console.log(process.env.DB_URI);
  * ES module scopes use import instead of require
  * all modules have to be used using "import" ex from "ex"
  * ex.config()
+ * 
  */
