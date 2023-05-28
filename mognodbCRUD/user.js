@@ -21,3 +21,6 @@ export async function connectToCluster(uri) {
   }
 }
 
+export async function executeGuestCrudOperation() {
+    
+}
