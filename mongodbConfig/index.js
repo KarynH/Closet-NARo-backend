@@ -1,6 +1,9 @@
 import { config } from "dotenv";
+import { executeGuestCrudOperations } from "../mognodbCRUD/user.js";
 
 config();
+await executeGuestCrudOperations();
+
 console.log(process.env.DB_URI);
 // start mongodb:  nodemon mongodbConfig/index.js
 
