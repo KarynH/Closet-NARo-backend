@@ -20,3 +20,4 @@ export async function connectToCluster(uri) {
     process.exit(); //The process.exit() method instructs Node.js to terminate the process synchronously with an exit status of code.
   }
 }
+
