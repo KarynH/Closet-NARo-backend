@@ -1,7 +1,12 @@
 import { MongoClient } from "mongodb";
+import guestDocument from "../models/guestDocument.js";
+import { ObjectId } from "mongodb";
+
 /**
  * Start by importing the MongoClient object from the mongodb npm package. MongoClient is an object used to initiate the connection with the database.
  */
+
+
 
 //establish a conncetion to the mongoDB cluster using the specified uri
 export async function connectToCluster(uri) {
@@ -21,18 +26,26 @@ export async function connectToCluster(uri) {
   }
 }
 
-    //db method, select database
+//db() , select database
 export async function executeGuestCrudOperations() {
+  const uri = process.env.DB_URI;
+  let mongoClient;
 
-    const uri = process.env.DB_URI;
-    let mongoClient;
+  try {
+    mongoClient = await connectToCluster(uri);
 
-    try {
-        mongoClient = await connectToCluster(uri);
-        const db = mongoClient.db("Closet-NARo"); //
-        const collection = db.collection('guests')
-    }finally {
-        await mongoClient.close()
-    }
+    const db = mongoClient.db("ClosetNARo");
+    const collection = db.collection("guests");
+
+    console.log("CREATE GUEST");
+    await createGuestDocument(collection);
+  } finally {
+    await mongoClient.close();
+  }
 }
 
+//create a new document using insertOne()
+export async function createGuestDocument(collection) {
+    guestDocument._id = new ObjectId();
+  await collection.insertOne(guestDocument);
+}
