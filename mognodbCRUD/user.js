@@ -21,13 +21,18 @@ export async function connectToCluster(uri) {
   }
 }
 
+    //db method, select database
 export async function executeGuestCrudOperations() {
-  const uri = process.env.DB_URI;
-  let mongoClient;
 
-  try {
-    mongoClient = await connectToCluster(uri);
-  } finally {
-    await mongoClient.close(); //ensure the connection is closed when the script is finishes execution.
-  }
+    const uri = process.env.DB_URI;
+    let mongoClient;
+
+    try {
+        mongoClient = await connectToCluster(uri);
+        const db = mongoClient.db("Closet-NARo"); //
+        const collection = db.collection('guests')
+    }finally {
+        await mongoClient.close()
+    }
 }
+
