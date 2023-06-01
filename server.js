@@ -6,5 +6,5 @@ dotenv.config();
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-  console.log(`PORT:${PORT}`);
+  console.log(`SEREVER ON PORT:${PORT}`);
 });
