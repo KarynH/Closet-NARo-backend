@@ -45,4 +45,4 @@ const userOrderSchema = new Schema({
   total: { type: String },
 });
 
-module.exports = mongoose.model("UserOrder", userOrderSchema);
+module.exports = mongoose.model("userOrders", userOrderSchema);

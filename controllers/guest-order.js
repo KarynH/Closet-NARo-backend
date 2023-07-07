@@ -6,15 +6,9 @@ const guestOrder = express.Router();
 import guestOrderSchema from "../models/guest-order-schema.js";
 // import guestOrderValidation from "../middleware/guest-order.js"
 
-guestOrder.route("/guest-checkout").post((req, res) => {
-  guestOrderSchema.create(req.body, (err, data) => {
-    if (err) {
-      return next(err);
-    } else {
-      console.log(data);
-      res.json(data);
-    }
-  });
-});
+guestOrder.get('/guest-order', (req, res) =>{
+  res.status(200).send('checkout order for guest')
+})
+
 
 module.exports = guestOrder;

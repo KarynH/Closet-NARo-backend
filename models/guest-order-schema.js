@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema; //declare schema object to define data structure 
+ //mongoose.schema is a constructor method given by the mongoose package that returns a new schema obj.
 
 const guestSchema = new Schema({
   _id: mongoose.Schema.Types.ObjectId,
@@ -45,4 +46,8 @@ const guestSchema = new Schema({
   total: { type: String },
 });
 
-module.exports = mongoose.model("GuestOrder", guestSchema);
+module.exports = mongoose.model("guestOrders", guestSchema);
+ //exporting the guestSchema model to the mongoose package
+ //"guestOrders" is the collection name that is assigned to the mongoose model constructor and is used to reference this model in the application's  code.
+ //the mongoose model constructor is a constructor method that extends the mongoose package and creates the model using the new schema provided.
+ //this allows us to interact with this data structure and modfiy it's behavior.
