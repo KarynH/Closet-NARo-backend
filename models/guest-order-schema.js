@@ -3,7 +3,6 @@ const Schema = mongoose.Schema; //declare schema object to define data structure
 //mongoose.schema is a constructor method given by the mongoose package that returns a new schema obj.
 
 const guestSchema = new Schema({
-  orderNumber: { type: String, required: true, unique: true },
   email: { type: String },
   deliveryMethod: [String],
   firstName: { type: String },
