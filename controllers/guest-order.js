@@ -14,6 +14,7 @@ guestOrder.post("/", async (req, res) => {
   }
 });
 
+// import checkLengthId from "../validation/guest-orders.js";
 guestOrder.get("/:id", async (req, res) => {
   try {
     const orderIdRequested = req.params.id;
@@ -25,8 +26,9 @@ guestOrder.get("/:id", async (req, res) => {
       return res.status(404).json({ message: "Guest order not found" });
     }
 
-    const respondWithOrderDetails = [retreiveOrderWithId, guestOrder.email];
+    const respondWithOrderDetails = [retreiveOrderWithId, guestOrder.firstName];
     res.status(200).json({ orderDetails: respondWithOrderDetails });
+
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
