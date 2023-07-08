@@ -12,9 +12,7 @@ import bodyParser from "body-parser";
 app.use(bodyParser.json());
 
 import mongoose from "mongoose";
-
 const DB_URI = process.env.DB_URI;
-
 mongoose
   .connect(DB_URI, {
     useNewUrlParser: true,
@@ -26,6 +24,9 @@ mongoose
   .catch((error) => {
     console.log("error connecting to mongoDB", error);
   });
+
+import guestOrderController from "./controllers/guest-order.js";
+app.use("/guestOrder", guestOrderController);
 
 app.get("/", (req, res) => {
   res.send("Hello from closet NARo");
