@@ -14,4 +14,15 @@ userAccount.post("/", async (req, res) => {
   }
 });
 
+import userOrderHistoryModel from "../models/user-order-history.js"
+userAccount.post("/:id", async (req, res) => {
+  try{
+    const orderHistory = new userOrderHistoryModel(req.body);
+    // const addOrderToProfileHistory = 
+  }
+})
+//check if with validation of dupe accounts are being cretaed
+//!phone, !email
+
+//make history local storage feature for guest and users ???
 export default userAccount;
