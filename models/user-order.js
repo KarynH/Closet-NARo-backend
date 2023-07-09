@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const Schema = mongoose.Schema;
 
 const userOrderSchema = new Schema({
   accountId: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "user-accounts",
   },
   email: { type: String },
@@ -41,4 +41,4 @@ const userOrderSchema = new Schema({
   total: { type: String },
 });
 
-export default mongoose.model("user-orders", userOrderSchema);
+export default mongoose.model("user-order", userOrderSchema);
