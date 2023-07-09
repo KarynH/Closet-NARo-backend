@@ -28,7 +28,6 @@ guestOrder.get("/:id", async (req, res) => {
 
     const respondWithOrderDetails = [retreiveOrderWithId, guestOrder.firstName];
     res.status(200).json({ orderDetails: respondWithOrderDetails });
-
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

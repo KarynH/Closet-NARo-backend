@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 //a data structure and the data type of a MongoDB doc.
 
 const userAccountSchema = new Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  userName: { type: String },
-  passWord: { type: String },
-  email: { type: String },
+  userName: { type: String, required: true },
+  passWord: { type: String, required: true},
+  profileImg: [{ type: String }],
+  email: { type: String, required: true },
   deliveryMethod: [String],
   firstName: { type: String },
   lastName: { type: String },
@@ -17,7 +17,7 @@ const userAccountSchema = new Schema({
   zipCode: { type: Number },
   city: { type: String },
   state: { type: String },
-  phoneNumber: { type: Number },
+  phoneNumber: { type: Number, required: true },
   cardNumber: { type: Number },
   favoriteProducts: [
     {
@@ -40,8 +40,12 @@ const userAccountSchema = new Schema({
       size: { type: String },
       price: { type: String },
       imageUrl: { type: String },
+      productId: {
+        type: Schema.Types.ObjectId,
+        ref: "Product",
+      },
     },
   ],
 });
 
-module.exports = mongoose.model("userAccounts", userAccountSchema);
+export default mongoose.model("useraccounts", userAccountSchema);

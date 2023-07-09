@@ -1,11 +1,10 @@
 // import { config } from "dotenv";
 // import { executeGuestCrudOperations } from "../mognodb/manual-template.js";
 
-// config();
-// await executeGuestCrudOperations();
+config();
+await executeGuestCrudOperations();
 
-// console.log(process.env.DB_URI);
-// start mongodb:  nodemon mongodbConfig/index.js
+console.log(process.env.DB_URI);
 
 /*
  invoke config function to load variables from .env file into proccess.env
@@ -15,5 +14,6 @@
  * ES module scopes use import instead of require
  * all modules have to be used using "import" ex from "ex"
  * ex.config()
+ * start mongodb:  nodemon mongodbConfig/index.js
  * 
  */
