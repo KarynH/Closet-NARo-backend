@@ -2,7 +2,7 @@ import express from "express";
 
 const userAccount = express.Router();
 
-import userAccountModel from "../models/user-account-schema.js";
+import userAccountModel from "../models/user-account.js";
 userAccount.post("/", async (req, res) => {
   try {
     const newAccountCreated = new userAccountModel(req.body);

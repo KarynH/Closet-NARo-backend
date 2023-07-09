@@ -2,7 +2,7 @@ import express from "express";
 
 const guestOrder = express.Router();
 
-import GuestOrderModel from "../models/guest-order-schema.js";
+import GuestOrderModel from "../models/guest-order.js";
 guestOrder.post("/", async (req, res) => {
   try {
     const newGuestOrder = new GuestOrderModel(req.body);
