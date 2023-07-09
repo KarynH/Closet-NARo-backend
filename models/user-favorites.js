@@ -17,4 +17,4 @@ const userAccountFavorites = new Schema([
   },
 ]);
 
-export default mongoose.model("userAccount-favorites", userAccountFavorites);
+export default mongoose.model("account-favorites", userAccountFavorites);

@@ -51,3 +51,4 @@ export default mongoose.model("guest-orders", guestSchema);
 //this allows us to interact with this data structure and modfiy it's behavior.
 
 //object id must be assgined excplicitly if it's being used in schema, otherwise mongoDB will assign it auto
+//productId references a productId from the product model.

@@ -12,6 +12,10 @@ const accountOrderHistory = new Schema({
     type: Schema.Types.ObjectId,
     ref: "user-accounts",
   },
+  productId: {
+    type: Schema.Types.ObjectId,
+    ref: "products",
+  },
 });
 
 export default mongoose.model("account-order-history", accountOrderHistory);
