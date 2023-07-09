@@ -2,7 +2,7 @@ import express from "express";
 
 const guestOrder = express.Router();
 
-import GuestOrderModel from "../models/guest-order-schema.js";
+import GuestOrderModel from "../models/guest-order.js";
 guestOrder.post("/", async (req, res) => {
   try {
     const newGuestOrder = new GuestOrderModel(req.body);
@@ -28,7 +28,6 @@ guestOrder.get("/:id", async (req, res) => {
 
     const respondWithOrderDetails = [retreiveOrderWithId, guestOrder.firstName];
     res.status(200).json({ orderDetails: respondWithOrderDetails });
-
   } catch (error) {
     res.status(404).json({ message: error.message });
   }

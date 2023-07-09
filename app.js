@@ -28,6 +28,9 @@ mongoose
 import guestOrderController from "./controllers/guest-order.js";
 app.use("/guestOrder", guestOrderController);
 
+import userAccountModel from "./controllers/user-account.js";
+app.use("/user", userAccountModel);
+
 app.get("/", (req, res) => {
   res.send("Hello from closet NARo");
 });

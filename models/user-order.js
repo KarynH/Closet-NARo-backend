@@ -1,15 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const Schema = mongoose.Schema;
 
 const userOrderSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "UserAccount",
-  },
-  orderNumber: {
-    type: String,
-    required: true,
+  accountId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user-accounts",
   },
   email: { type: String },
   deliveryMethod: [String],
@@ -32,7 +28,7 @@ const userOrderSchema = new Schema({
     {
       productId: {
         type: Schema.Types.ObjectId,
-        ref: "Product",
+        ref: "products",
       },
       name: { type: String },
       quantity: { type: Number },
@@ -45,4 +41,4 @@ const userOrderSchema = new Schema({
   total: { type: String },
 });
 
-module.exports = mongoose.model("userOrders", userOrderSchema);
+export default mongoose.model("user-order", userOrderSchema);

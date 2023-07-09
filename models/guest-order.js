@@ -31,7 +31,7 @@ const guestSchema = new Schema({
     {
       productId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
+        ref: "products", //!
       },
       name: { type: String },
       quantity: { type: Number },
@@ -44,10 +44,11 @@ const guestSchema = new Schema({
   total: { type: String },
 });
 
-export default mongoose.model("guestOrders", guestSchema);
+export default mongoose.model("guest-orders", guestSchema);
 //exporting the guestSchema model to the mongoose package
 //"guestOrders" is the collection name that is assigned to the mongoose model constructor and is used to reference this model in the application's  code.
 //the mongoose model constructor is a constructor method that extends the mongoose package and creates the model using the new schema provided.
 //this allows us to interact with this data structure and modfiy it's behavior.
 
 //object id must be assgined excplicitly if it's being used in schema, otherwise mongoDB will assign it auto
+//productId references a productId from the product model.
